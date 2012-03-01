@@ -5,7 +5,7 @@
 
 /**
  *
- * @author sophie
+ * @author sophie niisfke
  */
 public enum TypeMembre {
     
