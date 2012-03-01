@@ -16,4 +16,10 @@ public class Album {
         album = this.album;
         songs = this.songs;
     }
+    
+    private ArrayList<Song> buildSongList(){
+        ArrayList<Song> songs = new ArrayList<Song>();
+        
+        return songs;    
+    }
 }

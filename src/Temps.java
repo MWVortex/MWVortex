@@ -5,8 +5,12 @@
 
 /**
  *
- * @author sophie
+ * @author Nicolas
  */
-public interface Temps {
+import Time.*;
+public interface Temps 
+
+getDuree( long time ){ 
+}
     
 }

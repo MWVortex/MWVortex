@@ -19,4 +19,10 @@ public class Artist {
         artist = this.artist;
         albums = this.albums;
     }
+    
+    private ArrayList<Album> buildAlbumList(){
+        ArrayList<Album> albums = new ArrayList<Album>();
+        
+        return albums;
+    }
 }
