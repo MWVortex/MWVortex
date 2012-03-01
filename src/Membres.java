@@ -4,19 +4,12 @@
  * @author Sophie Déziel 
  *
  */
-public class Membres implements Configurable {
-
-    @Override
-    public void importer() {
-    }
-
-    @Override
-    public void exporter() {
-    }
-
+public class Membres {
+    
+    
+    
     /**
      * Retire un membre
-     *
      * @return boolean true si successful
      */
     public boolean retirer(String pseudo) {
@@ -52,9 +45,10 @@ public class Membres implements Configurable {
     }
     /**
      * Vérifie si le membre a les droits administrateurs
+     * @param pseudo
      * @return 
      */
-    public boolean estAdmin() {
+    public boolean estAdmin(String pseudo) {
         return false;
     }
 }
