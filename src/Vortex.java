@@ -1,11 +1,12 @@
-
-
 public class Vortex {
+    
+    private String configuration = "sc_trans.conf"; 
+    
+    Membres membres;
 
 
     public static void main(String[] args) {
 
-        //allo
-        //bazwell
+        //membres = new Membres(configuration);
     }
 }
