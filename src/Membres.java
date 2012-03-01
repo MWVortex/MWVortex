@@ -1,12 +1,16 @@
-
 /**
  * Gère les membres qui ont accès au logiciel
  * @author Sophie Déziel 
  *
  */
+import java.io.*;
+
 public class Membres {
+    private static String configuration;
     
-    
+    public Membres(String conf){
+        configuration = conf;
+    }
     
     /**
      * Retire un membre
@@ -36,12 +40,13 @@ public class Membres {
         return false;
     }
     /**
-     * Vérifie que le membre existe bien
+     * Vérifie que le membre existe bien, et retourne son index. S'il n'existe 
+     * pas, il retourne -1.
      * @param pseudo
-     * @return 
+     * @return index
      */
-    public boolean existe(String pseudo) {
-        return false;
+    public int existe(String pseudo) {
+        return -1;
     }
     /**
      * Vérifie si le membre a les droits administrateurs
