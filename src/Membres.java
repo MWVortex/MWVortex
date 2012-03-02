@@ -11,11 +11,12 @@ import java.io.IOException;
 
 public class Membres {
 
-    private static String configuration = "membres.conf";
+    private final String CONF = "membres.conf";
     FileReader fr = null;
+    private static int nombre;
 
     public Membres() {
-        System.out.print(login("dj", "noise"));
+        nombre = compte();
     }
 
     /**
@@ -53,7 +54,7 @@ public class Membres {
         int id = existe(pseudo);
         if (id >= 1) {
             try {
-                fr = new FileReader(configuration);
+                fr = new FileReader(CONF);
                 BufferedReader br = new BufferedReader(fr);
                 String s;
                 while ((s = br.readLine()) != null) {
@@ -79,7 +80,7 @@ public class Membres {
     public int existe(String pseudo) {
         int index = -1;
         try {
-            fr = new FileReader(configuration);
+            fr = new FileReader(CONF);
             BufferedReader br = new BufferedReader(fr);
             String s;
             while ((s = br.readLine()) != null) {
@@ -109,8 +110,8 @@ public class Membres {
         
     }
     
-    private void compte(){
-        
+    private int compte(){
+        return 0;
     }
     
 }
