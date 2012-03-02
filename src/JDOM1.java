@@ -1,7 +1,7 @@
 import java.io.*;
 import org.jdom.*;
 import org.jdom.output.*;
-
+//test netbean
 public class JDOM1
 {
    //Nous allons commencer notre arborescence en créant la racine XML
