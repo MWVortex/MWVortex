@@ -7,6 +7,6 @@ public class Vortex {
 
     public static void main(String[] args) {
 
-        membres = new Membres(configuration);
+        membres = new Membres();
     }
 }

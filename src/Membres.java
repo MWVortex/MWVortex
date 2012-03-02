@@ -11,19 +11,15 @@ import java.io.IOException;
 
 public class Membres {
 
-    private static String configuration;
+    private static String configuration = "membres.conf";
     FileReader fr = null;
 
-    public Membres(String conf) {
-        configuration = conf;
-
+    public Membres() {
         System.out.print(login("dj", "noise"));
-
     }
 
     /**
      * Retire un membre
-     *
      * @return boolean true si successful
      */
     public boolean retirer(String pseudo) {
@@ -31,7 +27,10 @@ public class Membres {
     }
 
     /**
-     * Ajoute un membre
+     * Ajoute un membre.
+     * Retourne true si l'opération a fonctionné. Le membre ne doit pas déjà 
+     * exister, et le pseudo ne doit pas contenir de caractères 
+     * invalides ( seulement [a-zA-Z0-9-_).
      *
      * @param pseudo
      * @param pass
@@ -42,7 +41,9 @@ public class Membres {
     }
 
     /**
-     *
+     * Vérifie la combinaison pseudo/mot de passe.
+     * Retourne true si le mot de passe correspond au login.
+     * 
      * @param pseudo
      * @param pass
      * @return true lorsque l'utilisateur existe et a le bon mot de passe
@@ -105,6 +106,10 @@ public class Membres {
     }
     
     public void setAdmin(String pseudo, boolean droit){
+        
+    }
+    
+    private void compte(){
         
     }
     
