@@ -7,10 +7,9 @@
  *
  * @author Nicolas
  */
-import Time.*;
-public interface Temps 
+//import java.sql.Time.*;
+public interface Temps {
 
-getDuree( long time ){ 
-}
+//getDuree( long time ){ }
     
 }
