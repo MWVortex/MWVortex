@@ -1,12 +1,12 @@
 public class Vortex {
     
-    private String configuration = "sc_trans.conf"; 
+    private static String configuration = "sc_trans.conf"; 
     
-    Membres membres;
+    static Membres membres;
 
 
     public static void main(String[] args) {
 
-        //membres = new Membres(configuration);
+        membres = new Membres();
     }
 }

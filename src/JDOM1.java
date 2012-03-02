@@ -33,4 +33,7 @@ public class JDOM1
       affiche();
       enregistre("Exercice1.xml");
    }
+   
+      public static void affiche(){}
+      public static void enregistre(String chose){}
 }
