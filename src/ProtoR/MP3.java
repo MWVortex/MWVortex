@@ -4,16 +4,16 @@
  */
 package ProtoR;
 
-import java.io.File;
 import java.nio.file.Path;
 
 /**
  *
  * @author sophie
  */
-public abstract class MP3 implements Comparable<MP3>{
+public abstract class MP3 implements Comparable<MP3>, Temps{
 
     protected Path chemin;
+    protected long duree;
     protected long id;
     static protected long idGenerator = 0;
     
@@ -51,6 +51,12 @@ public abstract class MP3 implements Comparable<MP3>{
      */
     public void setId(long id) {
         this.id = id;
+    }
+    
+    
+    @Override
+    public long getDuree(){
+        return duree;
     }
     
        @Override
