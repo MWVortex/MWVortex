@@ -1,37 +1,57 @@
+/**
+ * Gère les plages horraire
+ *
+ * @author Nicolas Foisy
+ *
+ */
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Horaire implements Temps {
     
-    private String nomDj; 
+    private String nomPlaylist;
     private String startTime;
-    private String duration;
+    private String duree;
 
     /**
      * Créer une nouvel plage horaire
+     * 
+     * @param startTime l'heure du début de la playlist
+     * @param duree la durée de la playlist
      */
-    public Horaire (String nomDj, String startTime, String duration ){
-        setNomDj( nomDj );
+    public Horaire ( String nomPlaylist, String startTime, String duree ){
+        setNomPlaylist( nomPlaylist );
         setStartTime( startTime );
-        setDuration( duration );      
+        setDuree( duree );      
     } 
     
     /**
-     * Modifie le nom du DJ. 
+     * Génère le nom de la playlist en fonction de la date et de l'heure 
+     * 
+     * @param nomPlaylist l'heure du début de la playlist
      */
-    public void setNomDj( String nomDj ){
-        this.nomDj = nomDj;
-    }
+    public void setNomPlaylist( String nomPlaylist ){
+        
+    }  
     
     /**
-     * Modifie le startTime. 
+     * Modifie le startTime de la playlist. 
+     * 
+    * @param startTime l'heure du début de la playlist
      */
     public void setStartTime( String startTime ){
         this.startTime = startTime;
     }  
     
     /**
-     * Modifie la durée. 
+     * Modifie la durée de la playlist.
+     * 
+     * @param duree la durée de la playlist
      */
-    public void setDuration( String duration ){
-        this.duration = duration;
+    public void setDuree( String duree ){
+        this.duree = duree;
     } 
 
    /**
