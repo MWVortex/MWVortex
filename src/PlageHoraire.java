@@ -8,5 +8,13 @@
  * @author sophie
  */
 public class PlageHoraire implements Temps {
+	
+	long duree;
+
+	@Override
+	public long getDuree() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
     
 }

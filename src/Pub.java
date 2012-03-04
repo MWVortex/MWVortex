@@ -4,15 +4,20 @@
  */
 
 
+
+import java.nio.file.Path;
+
+
 /**
  *
  * @author sophie
  */
-
-public interface Temps {
-
-    public long getDuree();
+public class Pub extends MP3 {
     
+    public Pub(Path chemin) {
+    
+        super (chemin);
+     
+    }
+
 }
-
-

@@ -13,7 +13,7 @@ public class Horaire implements Temps {
     
     private String nomPlaylist;
     private String startTime;
-    private String duree;
+    private long duree;
 
     /**
      * Créer une nouvel plage horaire
@@ -21,7 +21,7 @@ public class Horaire implements Temps {
      * @param startTime l'heure du début de la playlist
      * @param duree la durée de la playlist
      */
-    public Horaire ( String nomPlaylist, String startTime, String duree ){
+    public Horaire ( String nomPlaylist, String startTime, long duree ){
         setNomPlaylist( nomPlaylist );
         setStartTime( startTime );
         setDuree( duree );      
@@ -50,7 +50,7 @@ public class Horaire implements Temps {
      * 
      * @param duree la durée de la playlist
      */
-    public void setDuree( String duree ){
+    public void setDuree( long duree ){
         this.duree = duree;
     } 
 
@@ -59,5 +59,11 @@ public class Horaire implements Temps {
     */
     public String creerXml(){ 
       return("");
-    } 
+    }
+
+	@Override
+	public long getDuree() {
+		// TODO Auto-generated method stub
+		return duree;
+	} 
 }
