@@ -1,3 +1,5 @@
+package src;
+
 public class Vortex {
     
     private static String configuration = "sc_trans.conf"; 
@@ -10,5 +12,7 @@ public class Vortex {
         membres = new Membres();
         boolean login = membres.login("Sophie", "chosebinne");
         System.out.print(login);
+        
+        new Song();
     }
 }
