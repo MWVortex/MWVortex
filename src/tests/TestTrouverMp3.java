@@ -17,6 +17,11 @@ public class TestTrouverMp3 {
 		// TODO Auto-generated method stub
 		boolean tester = true;
 		
+		System.out.println("Entrer r pour tester un repertoire ");
+		System.out.println("Entrer m pour tester une musique");
+		System.out.println("Autre chose mettra fin au test");
+		System.out.println();
+		
 		while (tester == true){
 			try {
 				switch(System.in.read()){
