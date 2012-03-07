@@ -14,26 +14,16 @@ public class TestTrouverMp3 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		char input;
-		System.out.print("Entrer 'r' pour lire un repertoire" +
-				"ou 'm' pour lire un seule musique: ");
-		
-		
-		
-<<<<<<< HEAD
-=======
-		System.out.println("Entrer r pour tester un repertoire ");
-		System.out.println("Entrer m pour tester une musique");
+
+		System.out.println("Entrer 'r' pour tester un repertoire ");
+		System.out.println("Entrer 'm' pour tester une musique");
 		System.out.println("Autre chose mettra fin au test");
 		System.out.println();
 		
-		while (tester == true){
->>>>>>> 4021ec4a7d573cfc10bece7c5a855fcf005e1ef0
 			try {
-				
-				input = (char)System.in.read();
 
-				switch(input){
+				switch((char)System.in.read()){
+				
 				case 'm':
 					testUneMusique();
 					break;
@@ -41,7 +31,7 @@ public class TestTrouverMp3 {
 					testRepertoireMusique();
 					break;
 				default:
-						System.out.println("Fin test");
+					System.out.println("Fin test");
 				}
 				
 			} catch (IOException e) {
@@ -52,8 +42,6 @@ public class TestTrouverMp3 {
 				e.printStackTrace();
 			}
 			
-			
-		
 	}
 	
 	/*
