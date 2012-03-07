@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class ManageurDiscographie {
 	
-	private static FiltreurMp3 filtreur = new FiltreurMp3();
+	private static FiltreurMp3EtDossier filtreur = new FiltreurMp3EtDossier();
 	
 	/**
 	 * 
@@ -38,6 +38,9 @@ public class ManageurDiscographie {
     			recursion(fichiers[i].listFiles(filtreur), musiques);
     		}
     		else if(filtreur.accept(fichiers[i])){
+    			if (fichiers[i].isDirectory()){
+    				recursion(fichiers[i].listFiles(filtreur), musiques);
+    			}
     				musiques.add(new Musique(fichiers[i]));
     		}
     	}

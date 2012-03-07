@@ -10,7 +10,7 @@ public class ManageurPublicites {
 	 * Voir ManageurDiscographie pour les commentaires
 	 */
 	
-	private static FiltreurMp3 filtreur = new FiltreurMp3();
+	private static FiltreurMp3EtDossier filtreur = new FiltreurMp3EtDossier();
 	
 	static ArrayList<Pub> genererCollection(File dossier){
 		ArrayList<Pub> pubs = new ArrayList<>();
@@ -30,6 +30,9 @@ public class ManageurPublicites {
     			recursion(fichiers[i].listFiles(filtreur), pubs);
     		}
     		else if(filtreur.accept(fichiers[i])){
+    			if (fichiers[i].isDirectory()){
+    				recursion(fichiers[i].listFiles(filtreur), pubs);
+    			}
     				pubs.add(new Pub(fichiers[i]));
     		}
     	}

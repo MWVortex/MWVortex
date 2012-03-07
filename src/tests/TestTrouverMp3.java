@@ -1,6 +1,5 @@
 package tests;
 
-import java.io.File;
 import java.io.*;
 
 import javax.swing.JFileChooser;
@@ -15,11 +14,17 @@ public class TestTrouverMp3 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		boolean tester = true;
+		char input;
+		System.out.print("Entrer 'r' pour lire un repertoire" +
+				"ou 'm' pour lire un seule musique: ");
 		
-		while (tester == true){
+		
+		
 			try {
-				switch(System.in.read()){
+				
+				input = (char)System.in.read();
+
+				switch(input){
 				case 'm':
 					testUneMusique();
 					break;
@@ -27,9 +32,9 @@ public class TestTrouverMp3 {
 					testRepertoireMusique();
 					break;
 				default:
-					System.out.println("Fin test");
-					tester = false;
+						System.out.println("Fin test");
 				}
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -37,7 +42,9 @@ public class TestTrouverMp3 {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+			
+			
+		
 	}
 	
 	/*
@@ -48,14 +55,16 @@ public class TestTrouverMp3 {
 		
 		selecteur.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		selecteur.showOpenDialog(null);
+		
 		File file = selecteur.getSelectedFile();
 		MP3Collection.initDiscographie(file);
 		
 		for (int i = 0; i < MP3Collection.getDiscograhpie().size(); i++){
 			System.out.println(((Musique)MP3Collection.getDiscograhpie().get(i)).getArtist());
+			System.out.println(((Musique)MP3Collection.getDiscograhpie().get(i)).getTitle());
 			System.out.println(((Musique)MP3Collection.getDiscograhpie().get(i)).getAlbum());
 			System.out.println(((Musique)MP3Collection.getDiscograhpie().get(i)).getDureeEnString());
-					
+			System.out.println("------");		
 		}
 		
 		selecteur.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
@@ -65,9 +74,13 @@ public class TestTrouverMp3 {
 	 * Lit une musique et affiche quelques infos
 	 */
 	public  static void testUneMusique(){
+		selecteur.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		selecteur.showOpenDialog(null);
+		
 		Musique muse = new Musique(selecteur.getSelectedFile().toPath());
+		
 		System.out.println(muse.getArtist());
+		System.out.println(muse.getTitle());
 		System.out.println(muse.getAlbum());
 		System.out.println(muse.getDureeEnString());
 		
