@@ -20,6 +20,15 @@ public class TestTrouverMp3 {
 		
 		
 		
+<<<<<<< HEAD
+=======
+		System.out.println("Entrer r pour tester un repertoire ");
+		System.out.println("Entrer m pour tester une musique");
+		System.out.println("Autre chose mettra fin au test");
+		System.out.println();
+		
+		while (tester == true){
+>>>>>>> 4021ec4a7d573cfc10bece7c5a855fcf005e1ef0
 			try {
 				
 				input = (char)System.in.read();
