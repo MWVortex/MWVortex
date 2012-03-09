@@ -1,7 +1,7 @@
 package tests;
 
-import java.io.File;
 import java.io.*;
+import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 
@@ -15,11 +15,15 @@ public class TestTrouverMp3 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		boolean tester = true;
+
+		System.out.println("Entrer 'r' pour tester un repertoire ");
+		System.out.println("Entrer 'm' pour tester une musique");
+		System.out.print("Autre chose mettra fin au test: ");
 		
-		while (tester == true){
 			try {
-				switch(System.in.read()){
+
+				switch((char)System.in.read()){
+				
 				case 'm':
 					testUneMusique();
 					break;
@@ -27,9 +31,9 @@ public class TestTrouverMp3 {
 					testRepertoireMusique();
 					break;
 				default:
-					System.out.println("Fin test");
-					tester = false;
+						System.out.println("Fin test");
 				}
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -37,7 +41,7 @@ public class TestTrouverMp3 {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		
 	}
 	
 	/*
@@ -48,29 +52,46 @@ public class TestTrouverMp3 {
 		
 		selecteur.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		selecteur.showOpenDialog(null);
-		File file = selecteur.getSelectedFile();
-		MP3Collection.initDiscographie(file);
+		File fichier = selecteur.getSelectedFile();
 		
-		for (int i = 0; i < MP3Collection.getDiscograhpie().size(); i++){
-			System.out.println(((Musique)MP3Collection.getDiscograhpie().get(i)).getArtist());
-			System.out.println(((Musique)MP3Collection.getDiscograhpie().get(i)).getAlbum());
-			System.out.println(((Musique)MP3Collection.getDiscograhpie().get(i)).getDureeEnString());
-					
+		Collection<Musique> disco = new Collection<>(TypeMP3.MUSIQUE);
+		
+		try {
+			disco.importer(fichier.toPath());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
+		ArrayList<Musique> muses = disco.getListe();
+		
+		for (Musique muse: muses){
+			System.out.println(muse.getArtist());
+			System.out.println(muse.getTitle());
+			System.out.println(muse.getAlbum());
+			System.out.println(muse.getDureeEnString());
+			System.out.println("-------");
+		}
+		
+		System.out.println("Nombre de mp3s: " + muses.size());
 		selecteur.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 	}
 	
 	/*
 	 * Lit une musique et affiche quelques infos
 	 */
-	public  static void testUneMusique(){
+	public static void testUneMusique(){
+
+		selecteur.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		selecteur.showOpenDialog(null);
+		
 		Musique muse = new Musique(selecteur.getSelectedFile().toPath());
+		
 		System.out.println(muse.getArtist());
+		System.out.println(muse.getTitle());
 		System.out.println(muse.getAlbum());
 		System.out.println(muse.getDureeEnString());
-		
+
 	}
 
 }

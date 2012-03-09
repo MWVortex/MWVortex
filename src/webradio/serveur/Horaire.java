@@ -50,7 +50,7 @@ public class Horaire implements Temps {
     /**
      * Modifie la durée de la playlist.
      * 
-     * @param duree la durée de la playlist
+     * @param duree la durée de la playlist 
      */
     public void setDuree( long duree ){
         this.duree = duree;
