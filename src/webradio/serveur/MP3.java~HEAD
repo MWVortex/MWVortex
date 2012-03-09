@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+package webradio.serveur;
 
 
 import java.nio.file.Path;
@@ -25,6 +22,7 @@ public abstract class MP3 implements Comparable<MP3>, Temps{
         idGenerator ++;
         
     }
+    
     
     /**
      * @return the path
@@ -71,7 +69,7 @@ public abstract class MP3 implements Comparable<MP3>, Temps{
                 comparaison = -1;
             }
         } else {
-            throw new ArithmeticException("Mp3 est null");
+            throw new NullPointerException("Mp3 est null");
         }
         return comparaison;
     }

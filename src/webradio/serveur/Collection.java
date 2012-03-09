@@ -1,49 +1,24 @@
 package webradio.serveur;
+/*
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.util.ArrayList;
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
- * @author Sophie, Ralph
+ * @author sophie
  */
-public class Collection <E extends MP3> implements Configurable {
-	
-	private ArrayList<E> liste; 
-	public TypeMP3 type; //Détermine le type de la collection 
-	private ImporteurMP3 importeur; 
-	
-	/**
-	 * 
-	 * @param type: Collection de Musiques ou de Pubs
-	 */
-	public Collection(TypeMP3 type){
-		liste = new ArrayList<>();
-		importeur = new ImporteurMP3();
-		this.type = type;
-	}
-	
-	/**
-	 * Importe un répertoire de MP3
-	 */
+public class Collection implements Configurable {
+
     @Override
-    public void importer(Path repertoire) throws IOException {
-    	if (repertoire != null){
-    		importeur.ajouterUnRepertoire(repertoire, getListe(), type);
-    	} else {
-    		throw new NullPointerException("Chemin est null");
-    	}
+    public void importer() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void exporter() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
-	public ArrayList<E> getListe() {
-		return liste;
-	}
-
     
 }
