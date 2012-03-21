@@ -12,8 +12,6 @@ package webradio.serveur;
  */
 
 public interface Temps {
-
-    public long getDuree();
     
 }
 
